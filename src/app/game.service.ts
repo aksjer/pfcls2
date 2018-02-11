@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Gesture } from './models/gesture.model';
 import { Player } from './models/player.model';
-import { SharedService } from './shared.service';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { MatSnackBar } from '@angular/material';
 import { Result } from './models/result.model';
@@ -40,7 +38,7 @@ export class GameService {
 
   init(): void {
     let name1, name2;
-    while (!name1 && !name2) {
+    while (!name1) {
       name1 = prompt('Name of player 1');
     }
     while (!name2) {

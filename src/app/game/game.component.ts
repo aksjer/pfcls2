@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
-import { Gesture } from '../models/gesture.model';
 import { Player } from '../models/player.model';
 import { MatDialog } from '@angular/material';
 import { GesturesComponent } from '../gestures/gestures.component';
-import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/filter';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/concatMap';
-import 'rxjs/add/operator/concat';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
