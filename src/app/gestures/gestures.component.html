@@ -1,0 +1,6 @@
+<h1>{{name}}</h1>
+<div fxLayout="row" fxLayoutGap="30px">
+  <button mat-raised-button *ngFor="let gesture of gestures" (click)="select(gesture)" color="primary">
+    {{gesture}}
+  </button>
+</div>

@@ -1,0 +1,19 @@
+<ng-container *ngIf="(counter$ | async) > -1">
+  <h3 class="counter">Nombre de partie : {{counter$ | async}}</h3>
+</ng-container>
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="container">
+  <div class="mat-elevation-z8 player" *ngIf="p1">
+    <h1> {{p1.name}} </h1>
+    <h4>Score : {{p1.score}}</h4>
+  </div>
+  <div fxLayout="column" fxLayoutGap="20px">
+    <button mat-raised-button (click)="newGame()" color="primary">New game</button>
+    <button mat-raised-button (click)="battle()" color="primary">Battle</button>
+    <button mat-raised-button (click)="resetScore()" color="primary">Reset score</button>
+  </div>
+  <div class="mat-elevation-z8 player" *ngIf="p2">
+    <h1> {{p2.name}} </h1>
+    <h4>Score : {{p2.score}}</h4>
+  </div>
+</div>
