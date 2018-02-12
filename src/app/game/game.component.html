@@ -3,13 +3,14 @@
 </ng-container>
 
 <ng-template #player let-p>
-  <div class="mat-elevation-z8 player">
+  <div class="player mat-elevation-z8 player" fxLayout="column" fxLayoutAlign="center center">
     <h1> {{p.name}} </h1>
     <h4>Score : {{p.score}}</h4>
+    <img *ngIf="p.gesture" src="assets/images/{{p.gesture}}.jpg">
   </div>
 </ng-template>
 
-<div fxLayout="row" fxLayoutAlign="space-around center" class="container">
+<div fxLayout="row" fxLayoutAlign="space-around center" class="container" fxLayoutWrap>
   <ng-container *ngTemplateOutlet="player; context: { $implicit: p1 }"></ng-container>
   <div fxLayout="column" fxLayoutGap="20px">
     <button mat-raised-button (click)="newGame()" color="primary">New game</button>

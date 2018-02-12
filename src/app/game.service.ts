@@ -9,13 +9,13 @@ export class GameService {
 
   private result: Result[] = [
     { a: 'Pierre', b: 'Ciseaux', result: 'Pierre émousse Ciseaux' },
-    { a: 'Pierre', b: 'Lézard', result: 'Pierre écrase Lézard' },
+    { a: 'Pierre', b: 'Lezard', result: 'Pierre écrase Lézard' },
     { a: 'Feuille', b: 'Pierre', result: 'Feuille recouvre Pierre' },
     { a: 'Feuille', b: 'Spock', result: 'Feuille discrédite Spock' },
     { a: 'Ciseaux', b: 'Feuille', result: 'Ciseaux coupe Feuille' },
-    { a: 'Ciseaux', b: 'Lézard', result: 'Ciseaux décapite Lézard' },
-    { a: 'Lézard', b: 'Feuille', result: 'Lézard mange Feuille' },
-    { a: 'Lézard', b: 'Spock', result: 'Lézard poison Spock' },
+    { a: 'Ciseaux', b: 'Lezard', result: 'Ciseaux décapite Lézard' },
+    { a: 'Lezard', b: 'Feuille', result: 'Lézard mange Feuille' },
+    { a: 'Lezard', b: 'Spock', result: 'Lézard poison Spock' },
     { a: 'Spock', b: 'Pierre', result: 'Spock vaporise Pierre' },
     { a: 'Spock', b: 'Ciseaux', result: 'Spock casse Ciseaux' }
   ];
@@ -55,6 +55,8 @@ export class GameService {
 
   compare(r1: string, r2: string): void {
     let res;
+    this.player1.gesture = r1;
+    this.player2.gesture = r2;
     if (r1 !== r2) {
       const rp1 = this.findResult(r1, r2);
       const rp2 = this.findResult(r2, r1);

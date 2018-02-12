@@ -6,14 +6,14 @@
 .player {
   padding: 10px;
   width: 200px;
-}
-
-h1,
-h4 {
-  text-align: center;
+  background-color: #FFF;
 }
 
 .counter {
   position: fixed;
   left: 15px;
+}
+
+.player {
+  width: 300px;
 }

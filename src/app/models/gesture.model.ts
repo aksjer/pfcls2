@@ -2,6 +2,6 @@ export enum Gesture {
   'Pierre',
   'Feuille',
   'Ciseaux',
-  'Lézard',
+  'Lezard',
   'Spock'
 }
