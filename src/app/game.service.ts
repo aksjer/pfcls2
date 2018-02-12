@@ -24,11 +24,11 @@ export class GameService {
   get counter() { return this.counter$.value; }
   set counter(v: number) { this.counter$.next(v); }
 
-  player1$ = new BehaviorSubject<Player>(null);
+  player1$ = new BehaviorSubject<Player>(undefined);
   get player1() { return this.player1$.value; }
   set player1(p: Player) { this.player1$.next(p); }
 
-  player2$ = new BehaviorSubject<Player>(null);
+  player2$ = new BehaviorSubject<Player>(undefined);
   get player2() { return this.player2$.value; }
   set player2(p: Player) { this.player2$.next(p); }
 

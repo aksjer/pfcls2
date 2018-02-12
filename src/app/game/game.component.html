@@ -2,18 +2,19 @@
   <h3 class="counter">Nombre de partie : {{counter$ | async}}</h3>
 </ng-container>
 
-<div fxLayout="row" fxLayoutAlign="space-around center" class="container">
-  <div class="mat-elevation-z8 player" *ngIf="p1">
-    <h1> {{p1.name}} </h1>
-    <h4>Score : {{p1.score}}</h4>
+<ng-template #player let-p>
+  <div class="mat-elevation-z8 player">
+    <h1> {{p.name}} </h1>
+    <h4>Score : {{p.score}}</h4>
   </div>
+</ng-template>
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="container">
+  <ng-container *ngTemplateOutlet="player; context: { $implicit: p1 }"></ng-container>
   <div fxLayout="column" fxLayoutGap="20px">
     <button mat-raised-button (click)="newGame()" color="primary">New game</button>
     <button mat-raised-button (click)="battle()" color="primary">Battle</button>
     <button mat-raised-button (click)="resetScore()" color="primary">Reset score</button>
   </div>
-  <div class="mat-elevation-z8 player" *ngIf="p2">
-    <h1> {{p2.name}} </h1>
-    <h4>Score : {{p2.score}}</h4>
-  </div>
+  <ng-container *ngTemplateOutlet="player; context: { $implicit: p2 }"></ng-container>
 </div>

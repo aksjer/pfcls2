@@ -3,11 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SharedService {
 
-  constructor() { }
-
-  enumToArray(o: any): string[] {
-    const keys = Object.keys(o);
-    return keys.slice(keys.length / 2);
+  enumToArray(o: Object): string[] {
+    if (typeof o !== 'object') {
+      throw new Error(`param isn't an object`);
+    }
+    const k = Object.keys(o);
+    return k.slice(k.length / 2);
   }
 
 }
